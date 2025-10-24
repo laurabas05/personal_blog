@@ -1,0 +1,48 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" class="font-[Montserrat,Arial,Calibri]">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}My Personal Blog{% endblock %}</title>
+    {% tailwind_css %}
+    {% load static %}
+</head>
+
+<body class="font-[Montserrat,Arial,Calibri] bg-[#f0f0f0] m-0 dark:bg-[#0f0f0f] dark:text-[#e5e5e5]">
+
+    <header class="h-[85px]">
+        <div class="flex items-center justify-between px-[50px] h-full bg-[#f0f0f0] dark:bg-[#0f0f0f]">
+            <div class="text-[25px] font-bold text-[#343434] dark:text-[#e5e5e5]">My Personal Blog</div>
+            <nav>
+                <ul class="flex gap-[50px] list-none">
+                    <li><a href="/"
+                            class="text-[#343434] hover:text-[#575757] no-underline dark:text-[#e5e5e5] dark:hover:text-[#f3f3f3]">Home</a>
+                    </li>
+                    <li><a href="/aboutme"
+                            class="text-[#343434] hover:text-[#575757] no-underline dark:text-[#e5e5e5] dark:hover:text-[#f3f3f3]">About
+                            me</a></li>
+                    <li><a href="/posts"
+                            class="text-[#343434] hover:text-[#575757] no-underline dark:text-[#e5e5e5] dark:hover:text-[#f3f3f3]">Posts</a>
+                    </li>
+                    <li><a href="/users"
+                            class="text-[#343434] hover:text-[#575757] no-underline dark:text-[#e5e5e5] dark:hover:text-[#f3f3f3]">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="text-white bg-[#343434] text-center text-[15px] py-[25px] mb-0 dark:bg-[#0b0b0b]">
+        Made by ♥Laura
+    </footer>
+</body>
+
+</html>

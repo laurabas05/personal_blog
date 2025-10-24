@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+<div class="max-w-[90%] mx-auto m-[40px]">
+    <section class="flex flex-col text-center bg-white p-[15px] rounded-[10px] shadow dark:bg-[#2a2a2a]">
+        <h1 class="text-[1.8rem] font-semibold text-[#343434] mb-[5px] dark:text-[#e5e5e5] mb-[20px]">Register form!</h1>
+        <form class='text-center' action="{% url 'users:register' %}" method='post'>
+            {% csrf_token %}
+            {{ form }}
+            <button type=”submit”
+                class="bg-[#343434] text-white rounded-[4px] px-[15px] py-[5px] mt-auto self-start no-underline hover:bg-[#575757] dark:bg-[#696969] dark:text-white cursor-pointer">Submit
+                form!</button>
+        </form>
+    </section>
+</div>
+
+{% endblock %}
