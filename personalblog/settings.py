@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'posts',
-    'users'
+    'users',
+    'comments'
 ]
 
 MIDDLEWARE = [

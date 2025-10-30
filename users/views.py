@@ -21,11 +21,14 @@ def login_view(request):
         form = CustomAuthenticationForm(data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect('homepage')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('homepage')
     else:
         form = CustomAuthenticationForm()
     return render(request, "users/login.html", { "form": form })
 
 def logout_user(request):
-        logout(request)
-        return redirect('homepage')
+    logout(request)
+    return redirect('homepage')
